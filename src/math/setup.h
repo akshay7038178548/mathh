@@ -24,8 +24,10 @@ namespace math
 
 	typedef point_2d_t<math_t> point_2d;
 	typedef vector_2d_t<math_t> vector_2d;
+	typedef vector_2d_t<size_t> size_2d;
 	typedef point_3d_t<math_t> point_3d;
 	typedef vector_3d_t<math_t> vector_3d;
+	typedef vector_2d_t<size_t> size_3d;
 
 	typedef quaternion<math_t> quaternion_t;
 	typedef matrix<math_t, 4> matrix_3d;
@@ -41,6 +43,7 @@ namespace math
 	//typedef poly_line_3d<math_t> poly_line_3d_t;
 
 	typedef aabb_t<point_2d> aabb_2d;
+	typedef aabb_t<point_2d_t<size_t>> rect_2d;
 	typedef triangle_t<point_2d> triangle_2d;
 	typedef circle_t<point_2d> circle;
 
