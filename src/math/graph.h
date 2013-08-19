@@ -18,14 +18,18 @@ namespace math
 
 
 	public:
+		using set_t<T>::size;
+
 		using set_t<T>::insert;
 		//using set_t<T>::remove;
 
 		std::pair<size_t, bool> link(size_t ia, size_t ib)
 		{
 			// if (links_.count(ia).count(ib))
-			alinks_[ia][ib];
-			blinks_[ia][ib];
+			alinks_[ia].insert(ib);
+			blinks_[ib].insert(ia);
+
+			return {};
 		}
 	};
 }

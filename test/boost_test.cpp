@@ -290,16 +290,16 @@ BOOST_AUTO_TEST_CASE( graph )
 {
 	math::setup<math::math_t>();
 
-	math::graph_t<math::point_2d, int> g;
+	math::graph_t<math::point_2d> g;
 
-	auto i0 = g.insert(std::make_pair(math::point_2d::o, 0)).first;
+	auto i0 = g.insert(math::point_2d::o);
 
 	BOOST_CHECK(g.size() == 1);
 
-	auto i1 = g.insert(std::make_pair(math::point_2d( 1,  1), 1)).first;
-	auto i2 = g.insert(std::make_pair(math::point_2d( 1, -1), 2)).first;
-	auto i3 = g.insert(std::make_pair(math::point_2d(-1, -1), 3)).first;
-	auto i4 = g.insert(std::make_pair(math::point_2d(-1,  1), 4)).first;
+	auto i1 = g.insert(math::point_2d( 1,  1));
+	auto i2 = g.insert(math::point_2d( 1, -1));
+	auto i3 = g.insert(math::point_2d(-1, -1));
+	auto i4 = g.insert(math::point_2d(-1,  1));
 
 	BOOST_CHECK(g.size() == 5);
 
