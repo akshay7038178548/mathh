@@ -26,6 +26,7 @@ namespace math
 		T r;
 		T g;
 		T b;
+		T a;
 
 
 		static color_t<T> black;
@@ -122,6 +123,7 @@ namespace math
 		T h;
 		T s;
 		T l;
+		T a;
 
 
 		color_hsl_t()
@@ -183,6 +185,7 @@ namespace math
 		T h;
 		T s;
 		T v;
+		T a;
 
 
 		color_hsv_t()
