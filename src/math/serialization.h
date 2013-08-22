@@ -7,7 +7,7 @@
 	inline
 	void serialize(const math::color_t<T> &c, core::ostream &s)
 	{
-		s << c.r << c.g << c.b;
+		s << c.r << c.g << c.b << c.a;
 	}
 
 	template <typename T>
@@ -58,7 +58,7 @@
 	math::color_t<T> deserialize(core::istream &s, math::color_t<T> &)
 	{
 		math::color_t<T> c;
-		s >> c.r >> c.g >> c.b;
+		s >> c.r >> c.g >> c.b >> c.a;
 		return c;
 	}
 
