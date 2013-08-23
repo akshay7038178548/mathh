@@ -2,7 +2,13 @@
 #define math_h
 
 
-#include "_std.h"
+#include <initializer_list>
+#include <tuple>
+
+
+#include "glm/glm/glm.hpp"
+#include "glm/glm/gtc/matrix_transform.hpp"
+#include "glm/glm/gtc/type_ptr.hpp"
 
 
 #include "math/fwd.h"
