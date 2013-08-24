@@ -18,7 +18,7 @@
 	inline
 	math::vector_2d_t<T> parse(const std::string &s, math::vector_2d_t<T> &)
 	{
-		boost::char_separator<char> sep(":");
+		boost::char_separator<char> sep(":,");
 		boost::tokenizer<boost::char_separator<char>> tok(s, sep);
 		
 		math::vector_2d_t<T> v(0, 0); int i = 0;

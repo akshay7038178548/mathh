@@ -22,6 +22,8 @@ namespace math
 {
 	typedef float math_t;
 
+	typedef vector_2d_t<math_t> vec2;
+
 	typedef point_2d_t<math_t> point_2d;
 	typedef vector_2d_t<math_t> vector_2d;
 	typedef vector_2d_t<size_t> size_2d;

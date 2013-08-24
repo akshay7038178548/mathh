@@ -48,12 +48,12 @@ namespace math
 
 
 		color_t()
-			: r(0), g(0), b(0)
+			: r(0), g(0), b(0), a(0)
 		{
 		}
 
-		color_t(T r, T g, T b)
-			: r(r), g(g), b(b)
+		color_t(T r, T g, T b, T a = 1)
+			: r(r), g(g), b(b), a(a)
 		{
 		}
 
@@ -62,6 +62,7 @@ namespace math
 			: r(d[0])
 			, g(d[1])
 			, b(d[2])
+			, a(d[3])
 		{
 		}
 
@@ -71,7 +72,7 @@ namespace math
 		}
 
 		color_t(const color_t &c)
-			: r(c.r), g(c.g), b(c.b)
+			: r(c.r), g(c.g), b(c.b), a(c.a)
 		{
 		}
 
@@ -80,6 +81,7 @@ namespace math
 			: r(scale<U, T>(c.r))
 			, g(scale<U, T>(c.g))
 			, b(scale<U, T>(c.b))
+			, a(scale<U, T>(c.a))
 		{
 		}
 
