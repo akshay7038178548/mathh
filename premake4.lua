@@ -7,7 +7,7 @@
       excludes { "src/glm/test/**", "src/glm/glm/core/**.cpp" }
  
       configuration "Debug"
-         defines { "DEBUG" }
+         defines { "DEBUG", "_CRT_SECURE_NO_WARNINGS" }
          flags { "Symbols" }
  
       configuration "Release"

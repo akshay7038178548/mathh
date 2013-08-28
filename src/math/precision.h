@@ -25,7 +25,7 @@ namespace math
 	template <typename T>
 	bool is_zero(T a)
 	{
-		static T epsilon = 1e-5; //std::numeric_limits<T>::epsilon();
+		static T epsilon = (T)1e-5; //std::numeric_limits<T>::epsilon();
 		return a == 0 ? true
 		     : a > 0 ? a <=  epsilon
 		     : a < 0 ? a >= -epsilon

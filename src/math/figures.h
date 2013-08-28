@@ -75,6 +75,12 @@ namespace math
 		{
 		}
 
+		aabb_t(std::initializer_list<t_t> d)
+			: a(d.begin())
+			, b(d.begin() + 2)
+		{
+		}
+		
 		aabb_t(const aabb_t &c)
 			: a(c.a)
 			, b(c.b)

@@ -79,6 +79,12 @@ namespace math
 		{
 		}
 
+		explicit
+		point_2d_t(const T *d)
+			: b_t(d)
+		{
+		}
+
 		point_2d_t(std::initializer_list<T> d)
 			: b_t(d.begin())
 		{
