@@ -28,6 +28,11 @@ namespace math
 		{
 		}
 
+		complex(std::initializer_list<T> c)
+			: std::complex<T>(*(c.begin()), *(c.begin() + 1))
+		{
+		}
+
 		complex(const std::complex<T> &c)
 			: std::complex<T>(c)
 		{

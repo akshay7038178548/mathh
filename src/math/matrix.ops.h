@@ -311,9 +311,7 @@ namespace math
 #endif
 
 	template <typename T, typename U>
-	inline
-		matrix<U, 3> &
-		rotation_to_m(const complex<T> &c, matrix<U, 3> &m)
+	matrix<U, 3> &rotation_to_m(const complex<T> &c, matrix<U, 3> &m)
 	{
 
 #define rc(r, c) m[r + c*3]
@@ -330,9 +328,7 @@ namespace math
 	}
 
 	template <typename T, typename U>
-	inline
-		matrix<U, 3> &
-		translation_to_m(const _base_primitive_2d<T> &v, matrix<U, 3> &m)
+	matrix<U, 3> &translation_to_m(const _base_primitive_2d<T> &v, matrix<U, 3> &m)
 	{
 		m.m[6] = math_cast<U>(v.x);
 		m.m[7] = math_cast<U>(v.y);
@@ -353,8 +349,8 @@ namespace math
 
 		U w = l.rc(3,0)*p.x + l.rc(3,1)*p.y + l.rc(3,2)*p.z + l.m[15];
 		return point_3d_t<U>((math_cast<U>(l.rc(0,0)*p.x + l.rc(0,1)*p.y + l.rc(0,2)*p.z + l.m[12])/w)
-		                    , (math_cast<U>(l.rc(1,0)*p.x + l.rc(1,1)*p.y + l.rc(1,2)*p.z + l.m[13])/w)
-		                    , (math_cast<U>(l.rc(2,0)*p.x + l.rc(2,1)*p.y + l.rc(2,2)*p.z + l.m[14])/w));
+		                   , (math_cast<U>(l.rc(1,0)*p.x + l.rc(1,1)*p.y + l.rc(1,2)*p.z + l.m[13])/w)
+		                   , (math_cast<U>(l.rc(2,0)*p.x + l.rc(2,1)*p.y + l.rc(2,2)*p.z + l.m[14])/w));
 
 #undef rc
 	}
@@ -367,8 +363,8 @@ namespace math
 #define rc(r, c) m[r + c*4]
 
 		return vector_3d_t<U>(math_cast<U>(l.rc(0,0)*v.x + l.rc(0,1)*v.y + l.rc(0,2)*v.z)
-		                       , math_cast<U>(l.rc(1,0)*v.x + l.rc(1,1)*v.y + l.rc(1,2)*v.z)
-		                       , math_cast<U>(l.rc(2,0)*v.x + l.rc(2,1)*v.y + l.rc(2,2)*v.z));
+		                    , math_cast<U>(l.rc(1,0)*v.x + l.rc(1,1)*v.y + l.rc(1,2)*v.z)
+		                    , math_cast<U>(l.rc(2,0)*v.x + l.rc(2,1)*v.y + l.rc(2,2)*v.z));
 
 #undef rc
 	}
@@ -476,9 +472,7 @@ namespace math
 	}
 
 	template <typename T, typename U>
-	inline
-		matrix<U, 4> &
-		translation_to_m(const _base_primitive_3d<T> &v, matrix<U, 4> &m)
+	matrix<U, 4> &translation_to_m(const _base_primitive_3d<T> &v, matrix<U, 4> &m)
 	{
 		m.m[12] = math_cast<U>(v.x);
 		m.m[13] = math_cast<U>(v.y);

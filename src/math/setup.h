@@ -22,8 +22,10 @@ namespace math
 {
 	typedef float math_t;
 
-	typedef vector_2d_t<math_t> vec2;
 	typedef point_2d_t<math_t> point2;
+	typedef vector_2d_t<math_t> vec2;
+	typedef point_3d_t<math_t> point3;
+	typedef vector_3d_t<math_t> vec3;
 
 	typedef point_2d_t<math_t> point_2d;
 	typedef vector_2d_t<math_t> vector_2d;
@@ -33,6 +35,7 @@ namespace math
 	typedef vector_2d_t<size_t> size_3d;
 
 	typedef quaternion<math_t> quaternion_t;
+	typedef matrix<math_t, 3> matrix_2d;
 	typedef matrix<math_t, 4> matrix_3d;
 
 	typedef line_t<point_2d> line_2d;
@@ -68,7 +71,6 @@ namespace math
 #endif
 
 	typedef color_t<float> color;
-
 }
 
 
@@ -164,6 +166,8 @@ namespace math
 
 		coordinate_system<T>();
 	}
+
+	inline void setup() { math::setup<math_t>(); }
 }
 
 #endif // math_setup_h

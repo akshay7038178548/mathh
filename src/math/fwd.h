@@ -19,6 +19,9 @@
 
 namespace math
 {
+	using std::cos;
+	using std::sin;
+
 	template <typename T> struct array;
 	template <typename T> class set_t;
 	template <typename T> class graph_t;

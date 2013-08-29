@@ -74,6 +74,9 @@ namespace math
 		}
 	};
 
+	template <typename T, size_t S>
+	const T *value_ptr(const matrix<T, S> &m) { return m.m; }
+
 	template <typename T, size_t S, size_t eR, size_t eC>
 	struct matrix_redux
 	{

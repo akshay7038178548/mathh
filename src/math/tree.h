@@ -16,8 +16,8 @@ namespace math
 		T o;
 		index_type c[S];
 
-		tree_node() : c() {}
-		tree_node(const T &o) : o(o), c() {}
+		tree_node() {}
+		tree_node(const T &o) : o(o) {}
 	};
 
 	template <typename T, typename C = math::bi_compare<T>>
