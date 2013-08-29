@@ -149,6 +149,17 @@ namespace math
 		{
 		}
 
+		explicit
+		vector_2d_t(const T *d)
+			: b_t(d)
+		{
+		}
+
+		vector_2d_t(std::initializer_list<T> d)
+			: b_t(d.begin())
+		{
+		}
+
 		template <typename U>
 		vector_2d_t(U x, U y)
 			: b_t(x, y)
