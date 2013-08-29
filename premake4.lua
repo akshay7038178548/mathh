@@ -9,6 +9,7 @@
       configuration "Debug"
          defines { "DEBUG", "_CRT_SECURE_NO_WARNINGS" }
          flags { "Symbols" }
+         linkoptions { "/ignore:4221" }
  
       configuration "Release"
          defines { "NDEBUG" }
