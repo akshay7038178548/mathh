@@ -119,6 +119,12 @@ namespace math
 		return point_2d_t<T>(x, y);
 	}
 
+	template <typename T>
+	bool is_null(const point_2d_t<T> &o)
+	{
+		return is_null(o.x) && is_null(o.y);
+	}
+
 
 
 	template <typename T>

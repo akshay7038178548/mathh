@@ -141,6 +141,12 @@ namespace math
 		                           , point_2d_t<T>(bx, by));
 	}
 
+	template <typename P>
+	bool is_null(const aabb_t<P> &o)
+	{
+		return is_null(o.a) && is_null(o.b);
+	}
+
 	template<typename P>
 	static aabb_t<P> &operator +=(aabb_t<P> &l, const typename P::v_t &r);
 

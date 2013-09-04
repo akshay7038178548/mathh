@@ -6,6 +6,8 @@
 
 namespace math
 {
+	template <typename T> bool is_null(T a);
+	template <typename T, template <typename> class P> bool is_null(const P<T> &p);
 	template <typename T> bool is_zero(T a);
 	template <typename T, template <typename> class P> bool is_zero(const P<T> &p);
 
@@ -21,6 +23,12 @@ namespace math
 	template <typename T> bool aeq(T a, T b);
 
 
+
+	template <typename T>
+	bool is_null(T a)
+	{
+		return basis<T>::isnan(a);
+	}
 
 	template <typename T>
 	bool is_zero(T a)
