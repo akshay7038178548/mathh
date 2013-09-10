@@ -35,6 +35,8 @@ namespace math
 		t_t w() const { return b.x - a.x; }
 		t_t h() const { return b.y - a.y; }
 
+		std::pair<std::pair<t_t, t_t>, std::pair<t_t, t_t>> xywh() const { return {{a.x, a.y}, {w(), h()}}; }
+
 
 		aabb_t()
 		{
