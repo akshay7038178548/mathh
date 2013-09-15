@@ -19,8 +19,11 @@
 
 namespace math
 {
+	using std::abs;
 	using std::cos;
 	using std::sin;
+	using std::acos;
+
 
 	template <typename T> struct array;
 	template <typename T> class set_t;
@@ -75,6 +78,9 @@ namespace math
 	template <typename P> struct circle_t;
 
 	//template <typename T> struct matrix_3d : public matrix<T, 4> { using matrix<T, 4>::matrix<T, 4>; };
+
+	template <typename T> struct velocity_2d_t;
+	template <typename T> struct acceleration_2d_t;
 }
 
 #include "basis.h"

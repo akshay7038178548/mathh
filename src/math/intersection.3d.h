@@ -63,7 +63,7 @@ namespace math
 	point_3d_t<T> intersection(const circle_t<point_3d_t<T>> &s, const plane<T> &pl)
 	{
 		T d = distance(s.o(), pl);
-		T ad = std::abs(d);
+		T ad = abs(d);
 
 		if (ad > s.r) {
 			return point_3d_t<T>::null;

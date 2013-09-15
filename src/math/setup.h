@@ -53,6 +53,8 @@ namespace math
 	typedef triangle_t<point_2d> triangle_2d;
 	typedef circle_t<point_2d> circle;
 
+	typedef velocity_2d_t<math_t> velocity_2d;
+	typedef acceleration_2d_t<math_t> acceleration_2d;
 
 	typedef range_t<std::size_t> range;
 
@@ -71,6 +73,10 @@ namespace math
 #endif
 
 	typedef color_t<float> color;
+
+
+	typedef velocity_2d vel2;
+	typedef acceleration_2d acc2;
 }
 
 

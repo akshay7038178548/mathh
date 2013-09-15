@@ -196,7 +196,7 @@ namespace math
 
 		template <typename U>
 		explicit
-		vector_3d_t(const vector_2d_t<U> &c)
+		vector_3d_t(const _base_primitive_2d<U> &c)
 			: b_t(math_cast<T>(c.x), math_cast<T>(c.y), basis<T>::zero())
 		{
 		}

@@ -27,6 +27,9 @@ namespace math
 	template <typename T>
 	static bool is_null(const _base_primitive_2d<T> &p);
 
+	template <typename P, typename T>
+	inline P &operator +=(P &l, const _base_primitive_2d<T> &r);
+
 
 
 	template <typename T>
@@ -40,11 +43,17 @@ namespace math
 
 
 	template <typename T>
-	static point_2d_t<T> operator -(const point_2d_t<T> &r);
+	inline point_2d_t<T> operator +(const point_2d_t<T> &r);
+
+	template <typename T>
+	inline point_2d_t<T> operator -(const point_2d_t<T> &r);
 
 
 	template <typename T, typename U>
 	static point_2d_t<T> &operator +=(point_2d_t<T> &l, const vector_2d_t<U> &r);
+
+	template <typename T, typename U>
+	inline point_2d_t<T> &operator +=(const vector_2d_t<U> &, point_2d_t<T> &) = delete;
 
 	template <typename T, typename U>
 	static point_2d_t<T> &operator -=(point_2d_t<T> &l, const vector_2d_t<U> &r);
@@ -154,6 +163,15 @@ namespace math
 	static bool is_null(const _base_primitive_2d<T> &p)
 	{
 		return 	basis<T>::isnan(p.x) || basis<T>::isnan(p.y);
+	}
+
+
+	template <typename P, typename T>
+	inline P &operator +=(P &l, const _base_primitive_2d<T> &r)
+	{
+		l.x += r.x;
+		l.y += r.y;
+		return l;
 	}
 
 
@@ -278,7 +296,13 @@ namespace math
 
 
 	template <typename T>
-	static vector_2d_t<T> operator -(const vector_2d_t<T> &r)
+	inline vector_2d_t<T> operator +(const vector_2d_t<T> &r)
+	{
+		return r;
+	}
+
+	template <typename T>
+	inline vector_2d_t<T> operator -(const vector_2d_t<T> &r)
 	{
 		return vector_2d_t<T>(-r.x, -r.y);
 	}

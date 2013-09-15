@@ -32,7 +32,7 @@ namespace math
 	line_segment_t<point_2d_t<T>> intersection(const circle_t<point_2d_t<T> > &c, const line_t<point_2d_t<T>> &l)
 	{
 		T d = distance(c.o(), l);
-		T ad = std::abs(d);
+		T ad = abs(d);
 
 		if (ad > c.r) {
 			return line_segment_t<point_2d_t<T>>::null;

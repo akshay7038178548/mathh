@@ -222,6 +222,14 @@ namespace math
 	{
 		return vector_2d_t<T>(x, y);
 	}
+
+	template <typename T>
+	vector_2d_t<T> normalize(vector_2d_t<T> v)
+	{
+		T l = v.length();
+		if (math::is_zero(l)) return v;
+		return v / l;
+	}
 }
 
 #endif // math_primitives_2d_h
