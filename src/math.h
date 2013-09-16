@@ -18,6 +18,7 @@
 #include "math/precision.h"
 
 #include "math/array.h"
+#include "math/tuple.h"
 #include "math/range.h"
 
 #include "math/primitives.h"

@@ -3,6 +3,7 @@
 
 #include "fwd.h"
 
+#include "tuple.h"
 #include "range.h"
 
 #include "color.h"
@@ -22,6 +23,8 @@ namespace math
 {
 	typedef float math_t;
 
+	typedef tuple4_t<math_t> tuple4;
+	
 	typedef point_2d_t<math_t> point2;
 	typedef vector_2d_t<math_t> vec2;
 	typedef point_3d_t<math_t> point3;
@@ -99,6 +102,9 @@ namespace math
 
 	template <typename P> line_segment_t<P> line_segment_t<P>::null;
 
+	template <typename P> aabb_t<P> aabb_t<P>::o;
+	template <typename P> aabb_t<P> aabb_t<P>::null;
+
 
 	template <typename T> color_t<T> color_t<T>::black;
 	template <typename T> color_t<T> color_t<T>::white;
@@ -128,6 +134,9 @@ namespace math
 
 		line_segment_t<point_2d_t<T>>::null = line_segment_t<point_2d_t<T>>();
 		line_segment_t<point_3d_t<T>>::null = line_segment_t<point_3d_t<T>>();
+
+
+		aabb_t<point_2d_t<T>>::null = aabb_t<point_2d_t<T>>{ basis<T>::nan(), basis<T>::nan(), basis<T>::nan(), basis<T>::nan() };
 
 
 		color_t<T>::black     = color_t<T>(basis<T>::min()
@@ -174,6 +183,8 @@ namespace math
 	}
 
 	inline void setup() { math::setup<math_t>(); }
+
+	inline math_t nan() { return basis<math_t>::nan(); }
 }
 
 #endif // math_setup_h

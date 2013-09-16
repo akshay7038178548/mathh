@@ -9,6 +9,7 @@
 #include <map>
 #include <set>
 #include <stdexcept>
+#include <tuple>
 #include <utility>
 #include <vector>
 
@@ -24,6 +25,7 @@ namespace math
 	using std::sin;
 	using std::acos;
 
+	template <typename T> struct tuple4_t;
 
 	template <typename T> struct array;
 	template <typename T> class set_t;
@@ -98,6 +100,13 @@ namespace math
 		}
 		return c;
 	}
+
+	template <typename T>
+	struct math_tag {
+		operator bool() const {
+			return !math::is_null(*static_cast<const T *>(this));
+		}
+	};
 }
 
 #endif // math_fwd_h

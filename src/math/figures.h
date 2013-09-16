@@ -12,11 +12,16 @@
 namespace math
 {
 	template <typename P>
-	struct aabb_t
+	struct aabb_t : public math_tag<aabb_t<P>>
 	{
 		typedef P p_t;
 		typedef typename P::v_t v_t;
 		typedef typename P::t_t t_t;
+
+
+		static aabb_t<P> o;
+		static aabb_t<P> null;
+
 
 		p_t a;
 		p_t b;
@@ -30,12 +35,14 @@ namespace math
 		}
 
 
-		p_t o() const { return median(a, b); }
-		v_t v() const { return b - o(); }
+		//p_t o() const { return median(a, b); }
+		//v_t v() const { return b - o(); }
 		t_t w() const { return b.x - a.x; }
 		t_t h() const { return b.y - a.y; }
 
-		std::pair<std::pair<t_t, t_t>, std::pair<t_t, t_t>> xywh() const { return {{a.x, a.y}, {w(), h()}}; }
+		tuple4_t<t_t> xywh() const { return {a.x, a.y, w(), h()}; }
+		//std::tupe<t_t, t_t, t_t, t_t> xywh() const { return { a.x, a.y, w(), h() }; }
+
 
 
 		aabb_t()
