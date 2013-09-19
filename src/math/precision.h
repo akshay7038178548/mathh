@@ -49,6 +49,12 @@ namespace math
 		return eq(a, basis<T>::one());
 	}
 
+	template <typename T>
+	bool same_sign(T a, T b)
+	{
+		return std::signbit(a) == std::signbit(b);
+	}
+
 
 	template <typename T>
 	bool eq(T a, T b)
